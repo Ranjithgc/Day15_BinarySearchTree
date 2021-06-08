@@ -23,5 +23,16 @@ public class BinaryTree<T extends Comparable<T>> {
  		}
         	return root;
     	}
+	
+	// uc2: Ability to create Binary Tree And added use size()
+	public int size() {
+        	return sizeOfBinarySearchTree(root);
+    	}
 
+    	public  int sizeOfBinarySearchTree(BinaryNode<T> root) {
+        	if(root == null)
+            		return 0;
+        	else
+            		return 1 + sizeOfBinarySearchTree(root.left) + sizeOfBinarySearchTree					(root.right);
+    	}
 }
